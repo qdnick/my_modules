@@ -1,3 +1,4 @@
+# Manifest modules hr_hospital
 {
     'name': 'HR Hospital',
     'summary': '',
@@ -22,7 +23,7 @@
         'views/patient_views.xml',
         'views/visit_views.xml',
         'views/disease_views.xml',
-        'data/disease_data.xml'
+        'data/disease_data.xml',
     ],
 
     'demo': [

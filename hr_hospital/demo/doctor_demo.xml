@@ -1,18 +1,18 @@
 <odoo>
 
     <record id="doctor1" model="hr_hospital.doctor">
-        <field name="name">Шевченко О О</field>
-        <field name="specialty">Хірургія</field>
+        <field name="name">Shevcenko</field>
+        <field name="specialty">Cardiology</field>
     </record>
 
     <record id="doctor2" model="hr_hospital.doctor">
-        <field name="name">Петренко К Т</field>
-        <field name="specialty">Сімейний</field>
+        <field name="name">Petrenko K T</field>
+        <field name="specialty">Family doctor</field>
     </record>
 
     <record id="doctor3" model="hr_hospital.doctor">
-        <field name="name">Скляренко М М</field>
-        <field name="specialty">Кардіологія</field>
+        <field name="name">Sklyarenko S V</field>
+        <field name="specialty">Cardiology</field>
     </record>
 
 </odoo>

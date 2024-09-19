@@ -1,15 +1,15 @@
 <odoo>
 
     <record id="disease1" model="hr_hospital.disease">
-        <field name="name">Грип</field>
+        <field name="name">Flu</field>
     </record>
 
     <record id="disease2" model="hr_hospital.disease">
-        <field name="name">Ангіна</field>
+        <field name="name">Angina</field>
     </record>
 
     <record id="disease3" model="hr_hospital.disease">
-        <field name="name">Вовчанка</field>
+        <field name="name">Volchanka</field>
     </record>
 
 </odoo>

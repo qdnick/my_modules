@@ -1,7 +1,16 @@
+"""
+Module doctor for hr_hospital
+
+"""
+
+
 from odoo import models, fields
 
 
 class Doctor(models.Model):
+    """
+    Model Doctor.
+    """
     _name = 'hr_hospital.doctor'
     _description = 'Doctor'
 
