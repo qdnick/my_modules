@@ -1,0 +1,18 @@
+<odoo>
+
+    <record id="doctor1" model="hr_hospital.doctor">
+        <field name="name">Шевченко О О</field>
+        <field name="specialty">Хірургія</field>
+    </record>
+
+    <record id="doctor2" model="hr_hospital.doctor">
+        <field name="name">Петренко К Т</field>
+        <field name="specialty">Сімейний</field>
+    </record>
+
+    <record id="doctor3" model="hr_hospital.doctor">
+        <field name="name">Скляренко М М</field>
+        <field name="specialty">Кардіологія</field>
+    </record>
+
+</odoo>

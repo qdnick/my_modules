@@ -1,0 +1,15 @@
+<odoo>
+
+    <record id="disease1" model="hr_hospital.disease">
+        <field name="name">Грип</field>
+    </record>
+
+    <record id="disease2" model="hr_hospital.disease">
+        <field name="name">Ангіна</field>
+    </record>
+
+    <record id="disease3" model="hr_hospital.disease">
+        <field name="name">Вовчанка</field>
+    </record>
+
+</odoo>
