@@ -11,6 +11,7 @@ class Patient(models.Model):
     """
     Model Patient.
     """
+
     _name = 'hr_hospital.patient'
     _description = 'Patient'
 
