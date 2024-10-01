@@ -1,0 +1,27 @@
+<odoo>
+
+    <record id="specialty1" model="hr_hospital.specialty">
+        <field name="name">Cardiologist</field>
+    </record>
+
+    <record id="specialty2" model="hr_hospital.specialty">
+        <field name="name">Dermatologist</field>
+    </record>
+
+    <record id="specialty3" model="hr_hospital.specialty">
+        <field name="name">Neurologist</field>
+    </record>
+
+    <record id="specialty4" model="hr_hospital.specialty">
+        <field name="name">Pediatrician</field>
+    </record>
+
+    <record id="specialty5" model="hr_hospital.specialty">
+        <field name="name">Orthopedic Surgeon</field>
+    </record>
+
+    <record id="specialty6" model="hr_hospital.specialty">
+        <field name="name">Oncologist</field>
+    </record>
+
+</odoo>

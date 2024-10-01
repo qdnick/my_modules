@@ -1,4 +1,3 @@
-"""
-This is the init file for the hr_hospital module.
-"""
+# import models
 from . import models
+from . import wizard

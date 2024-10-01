@@ -16,19 +16,21 @@
     },
 
     'data': [
-
         'security/ir.model.access.csv',
-        'views/hospital_main_menu_views.xml',
+        'wizard/disease_report_wizard_views.xml',
+        'wizard/mass_update_doctor_wizard_views.xml',
+        'views/specialty_views.xml',
         'views/doctor_views.xml',
         'views/patient_views.xml',
         'views/visit_views.xml',
         'views/disease_views.xml',
-        'data/disease_data.xml',
+        'views/diagnosis_views.xml',
+        'views/hospital_main_menu_views.xml',
     ],
 
     'demo': [
-        'demo/doctor_demo.xml',
-        'demo/patient_demo.xml',
+        'demo/disease_demo.xml',
+        'demo/specialty_demo.xml',
     ],
 
     'installable': True,
@@ -37,5 +39,6 @@
     'images': [
         'static/description/icon.png'
     ],
+
 
 }

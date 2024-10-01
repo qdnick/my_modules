@@ -1,11 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="view_patient_tree" model="ir.ui.view">
         <field name="name">patient.tree</field>
         <field name="model">hr_hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
-                <field name="doctor_id"/>
+                <header>
+                    <button name="%(action_mass_update_doctor_wizard)d"
+                            string="Mass Update Personal Doctor"
+                            type="action"
+                            class="btn-primary"
+                    />
+                </header>
+
+                <field name="display_name"/>
+                <field name="personal_doctor_id"/>
             </tree>
         </field>
     </record>
@@ -16,11 +26,36 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="name"/>
-                    <field name="disease_id"/>
-                    <field name="doctor_id"/>
+                    <group>
+                        <group>
+                            <field name="first_name" string="First name"/>
+                            <field name="last_name"/>
+                            <field name="phone"/>
+                            <field name="gender" widget="radio"/>
+                        </group>
+                        <group>
+                            <field name="photo" string="" widget="image" class="oe_avatar m-0" options='{"zoom": true, "preview_image": "avatar256"}'/>
+                        </group>
+                        <group>
+                            <field name="passport_info" string="Passport"/>
+                            <field name="personal_doctor_id"/>
+                            <field name="birth_date"/>
+                            <field name="contact_person"/>
+                            <field name="age"/>
+                        </group>
+                    </group>
                 </group>
             </form>
         </field>
     </record>
+
+    <record id="action_mass_update_doctor_wizard" model="ir.actions.act_window">
+        <field name="name">Mass Update Personal Doctor</field>
+        <field name="res_model">mass.update.doctor.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_mass_update_doctor_wizard_form"/>
+        <field name="target">new</field>
+        <field name="context">{'active_ids': active_ids}</field>
+    </record>
+
 </odoo>

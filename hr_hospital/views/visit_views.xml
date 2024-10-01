@@ -1,12 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="view_visit_tree" model="ir.ui.view">
         <field name="name">visit.tree</field>
         <field name="model">hr_hospital.visit</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="actual_date"/>
+                <field name="scheduled_date"/>
                 <field name="patient_id"/>
-                <field name="date"/>
-                <field name="notes"/>
+                <field name="doctor_id"/>
+                <field name="status"/>
             </tree>
         </field>
     </record>
@@ -17,11 +21,15 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="patient_id"/>
-                    <field name="date"/>
-                    <field name="notes"/>
+                    <field name="patient_id" string="Patient"/>
+                    <field name="status" widget="radio"/>
+                    <field name="scheduled_date"/>
+                    <field name="actual_date"/>
+                    <field name="doctor_id"/>
+                    <field name="diagnosis_ids"/>
                 </group>
             </form>
         </field>
     </record>
+
 </odoo>
