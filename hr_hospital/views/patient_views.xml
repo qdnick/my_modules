@@ -1,5 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <odoo>
+
+    <record id="action_mass_update_doctor_wizard" model="ir.actions.act_window">
+        <field name="name">Mass Update Personal Doctor</field>
+        <field name="res_model">mass.update.doctor.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_mass_update_doctor_wizard_form"/>
+        <field name="target">new</field>
+        <field name="context">{'active_ids': active_ids}</field>
+    </record>
 
     <record id="view_patient_tree" model="ir.ui.view">
         <field name="name">patient.tree</field>
@@ -10,10 +19,11 @@
                     <button name="%(action_mass_update_doctor_wizard)d"
                             string="Mass Update Personal Doctor"
                             type="action"
+                            icon="fa-plus"
                             class="btn-primary"
                     />
+                    <button special="cancel" class="oe_link" string="Close"/>    
                 </header>
-
                 <field name="display_name"/>
                 <field name="personal_doctor_id"/>
             </tree>
@@ -49,13 +59,6 @@
         </field>
     </record>
 
-    <record id="action_mass_update_doctor_wizard" model="ir.actions.act_window">
-        <field name="name">Mass Update Personal Doctor</field>
-        <field name="res_model">mass.update.doctor.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="view_mass_update_doctor_wizard_form"/>
-        <field name="target">new</field>
-        <field name="context">{'active_ids': active_ids}</field>
-    </record>
+
 
 </odoo>
