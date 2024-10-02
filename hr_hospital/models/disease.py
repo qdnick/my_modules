@@ -23,12 +23,10 @@ class Disease(models.Model):
     _parent_store = True
     _rec_name = 'complete_name'
 
-    name = fields.Char('Name',
-                       index='trigram',
+    name = fields.Char(index='trigram',
                        required=True,
                        translate=True)
-    complete_name = fields.Char('Complete Name',
-                                compute='_compute_complete_name',
+    complete_name = fields.Char(compute='_compute_complete_name',
                                 recursive=True,
                                 store=True)
     parent_id = fields.Many2one('hr_hospital.disease',
@@ -68,3 +66,4 @@ class Disease(models.Model):
             return super()._compute_display_name()
         for record in self:
             record.display_name = record.name
+            return None
