@@ -29,7 +29,6 @@ class Patient(models.Model):
     def _compute_age(self):
         for patient in self:
             if patient.birth_date:
-                patient.age = \
-                    (fields.Date.today().year - patient.birth_date.year)
+                patient.age = (fields.Date.today().year - patient.birth_date.year)
             else:
                 patient.age = 0
