@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="doctor1" model="hr_hospital.doctor">
+        <field name="last_name">Shevcenko</field>
+        <field name="first_name">Bogdan</field>
+        <field name="gender">male</field>
+        <field name="is_intern">false</field>
+        <field name="phone">+380994444451</field>
+        <field name="specialty_id" ref="specialty1"/>
+    </record>
+
+    <record id="doctor2" model="hr_hospital.doctor">
+        <field name="last_name">Shevcenko</field>
+        <field name="first_name">Ivan</field>
+        <field name="gender">male</field>
+        <field name="is_intern">true</field>
+        <field name="phone">+380994442251</field>
+        <field name="specialty_id" ref="specialty1"/>
+        <field name="mentor_id" ref="doctor1"/>
+    </record>
+
+    <record id="doctor3" model="hr_hospital.doctor">
+        <field name="last_name">Tatarova</field>
+        <field name="first_name">Anna</field>
+        <field name="gender">female</field>
+        <field name="is_intern">false</field>
+        <field name="phone">+380504239452</field>
+        <field name="specialty_id" ref="specialty2"/>
+    </record>
+
+    <record id="doctor4" model="hr_hospital.doctor">
+        <field name="last_name">Mihailyk</field>
+        <field name="first_name">Viktoria</field>
+        <field name="gender">female</field>
+        <field name="is_intern">true</field>
+        <field name="phone">+380504863872</field>
+        <field name="specialty_id" ref="specialty4"/>
+        <field name="mentor_id" ref="doctor1"/>
+    </record>
+
+</odoo>

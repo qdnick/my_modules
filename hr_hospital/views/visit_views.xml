@@ -2,11 +2,18 @@
 
 <odoo>
 
+    <record id="action_hr_hospital_visits" model="ir.actions.act_window">
+        <field name="name">Visits</field>
+        <field name="res_model">hr_hospital.visit</field>
+        <field name="view_mode">tree,form,pivot,search,calendar</field>
+        <field name="context">{}</field>
+     </record>
+
     <record id="view_visit_tree" model="ir.ui.view">
         <field name="name">visit.tree</field>
         <field name="model">hr_hospital.visit</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree default_group_by="status">
                 <field name="actual_date"/>
                 <field name="scheduled_date"/>
                 <field name="patient_id"/>
@@ -20,16 +27,78 @@
         <field name="name">visit.form</field>
         <field name="model">hr_hospital.visit</field>
         <field name="arch" type="xml">
-            <form>
-                <group>
-                    <field name="patient_id" string="Patient"/>
-                    <field name="status" widget="radio"/>
-                    <field name="scheduled_date"/>
-                    <field name="actual_date"/>
-                    <field name="doctor_id"/>
-                    <field name="diagnosis_ids"/>
-                </group>
+             <form string="Patient Visit">
+                <sheet>
+                    <header>
+                        <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <group>
+                        <field name="patient_id"/>
+                        <field name="doctor_id"/>
+                        <field name="scheduled_date"/>
+                        <field name="actual_date"/>
+                    </group>
+                    <notebook>
+                        <page name="first_page_example" string="Diagnosis">
+                            <group>
+                                <field name="diagnosis_ids"/>
+                            </group>
+                        </page>
+                        <page name="second_page_example" string="Diagnosis2">
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter_position_right">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </div>
             </form>
+        </field>
+    </record>
+
+    <record id="view_visit_calendar" model="ir.ui.view">
+        <field name="name">visit.calendar</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <calendar string="Patient Visits" date_start="scheduled_date" date_stop="actual_date">
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="status"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_visit_search" model="ir.ui.view">
+        <field name="name">visit.search</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+        
+            <search string="Filters">
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="status"/>
+                <field name="scheduled_date"/>
+                <field name="actual_date"/>
+                <filter string="Scheduled status" name="status_scheduled" domain="[('status','=','scheduled')]"/>
+                <group expand="1" string="Group by Status">
+                    <field name="status"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_visit_pivot" model="ir.ui.view">
+        <field name="name">visit.pivot</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="priority">50</field>
+        <field name="arch" type="xml">
+            <pivot string="Visits Pivot" sample="1" disable_linking="1" display_quantity="1">
+                <field name="doctor_id" type="row"/>
+                <field name="status" type="col"/>
+                <field name="actual_date_day" type="col"/>
+            </pivot>
         </field>
     </record>
 
