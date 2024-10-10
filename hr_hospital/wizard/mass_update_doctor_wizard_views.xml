@@ -11,8 +11,16 @@
                     <field name="new_doctor_id"/>
                 </group>
                 <footer>
-                    <button string="Update" type="object" name="action_update_doctor" class="btn-primary"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    <button name="action_update_doctor"
+                            string="Update"
+                            type="object"
+                            class="btn-primary"
+                            confirm="Do you realy wanted update a doctor?"
+                    />
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"
+                    />
                 </footer>
             </form>
         </field>

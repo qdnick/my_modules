@@ -2,6 +2,13 @@
 
 <odoo>
 
+    <record id="action_hr_hospital_diseases" model="ir.actions.act_window">
+        <field name="name">Diseases</field>
+        <field name="res_model">hr_hospital.disease</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+    </record>
+
     <record id="disease_tree" model="ir.ui.view">
         <field name="name">disease.tree</field>
         <field name="model">hr_hospital.disease</field>
@@ -35,9 +42,27 @@
         <field name="model">hr_hospital.disease</field>
         <field name="arch" type="xml">
             <search string="Disease">
-                <field name="name" string="Product Categories"/>
-                <field name="parent_id"/>
+                <searchpanel>
+                    <field name="parent_id" select="multi" hierarchical="1"/>
+                </searchpanel>
             </search>
+        </field>
+    </record>
+
+    <record id="disease_view_kanban" model="ir.ui.view">
+        <field name="name">hr_hospital.disease.kanban</field>
+        <field name="model">hr_hospital.disease</field>
+        <field name="arch" type="xml">
+            <kanban class="o_modules_kanban">
+                <field name="name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <strong><field name="name"/></strong>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 

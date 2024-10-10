@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <!-- Демо-записи для моделі "Діагноз" -->
+    <record id="diagnosis1" model="hr_hospital.diagnosis">
+        <field name="description">First diagnosis description</field>
+        <field name="visit_id" ref="hr_hospital.visit1"/>
+        <field name="disease_id" ref="hr_hospital.disease1"/>
+    </record>
+
+    <record id="diagnosis2" model="hr_hospital.diagnosis">
+        <field name="description">Second diagnosis description</field>
+        <field name="visit_id" ref="hr_hospital.visit2"/>
+        <field name="disease_id" ref="hr_hospital.disease2"/>
+    </record>
+
+    <record id="diagnosis3" model="hr_hospital.diagnosis">
+        <field name="description">Third diagnosis description</field>
+        <field name="visit_id" ref="hr_hospital.visit3"/>
+        <field name="disease_id" ref="hr_hospital.disease3"/>
+    </record>
+
+    <record id="diagnosis4" model="hr_hospital.diagnosis">
+        <field name="description">Fourth diagnosis description</field>
+        <field name="visit_id" ref="hr_hospital.visit4"/>
+        <field name="disease_id" ref="hr_hospital.disease4"/>
+    </record>
+
+    <record id="diagnosis5" model="hr_hospital.diagnosis">
+        <field name="description">Fifth diagnosis description</field>
+        <field name="visit_id" ref="hr_hospital.visit5"/>
+        <field name="disease_id" ref="hr_hospital.disease5"/>
+    </record>
+
+    <record id="diagnosis6" model="hr_hospital.diagnosis">
+        <field name="description">Sixth diagnosis description</field>
+        <field name="visit_id" ref="hr_hospital.visit6"/>
+        <field name="disease_id" ref="hr_hospital.disease6"/>
+    </record>
+
+</odoo>

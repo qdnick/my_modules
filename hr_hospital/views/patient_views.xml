@@ -2,6 +2,13 @@
 
 <odoo>
 
+    <record id="action_hr_hospital_patients" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hr_hospital.patient</field>
+        <field name="view_mode">tree,form,search</field>
+        <field name="context">{}</field>
+    </record>
+
     <record id="action_mass_update_doctor_wizard" model="ir.actions.act_window">
         <field name="name">Mass Update Personal Doctor</field>
         <field name="res_model">mass.update.doctor.wizard</field>
@@ -36,30 +43,75 @@
         <field name="model">hr_hospital.patient</field>
         <field name="arch" type="xml">
             <form>
-                <group>
+                <header>
+                    <button name="open_patient_visits"
+                            string="View Visits"
+                            type="object"
+                            class="btn-primary"
+                    />
+                    <button name="quick_visit"
+                            string="Create Quick Visit"
+                            type="object"
+                            class="btn-primary"
+                    />
+                </header>
+                <sheet>
                     <group>
                         <group>
-                            <field name="first_name" string="First name"/>
-                            <field name="last_name"/>
-                            <field name="phone"/>
-                            <field name="gender" widget="radio"/>
-                        </group>
-                        <group>
-                            <field name="photo" string="" widget="image" class="oe_avatar m-0" options='{"zoom": true, "preview_image": "avatar256"}'/>
-                        </group>
-                        <group>
-                            <field name="passport_info" string="Passport"/>
-                            <field name="personal_doctor_id"/>
-                            <field name="birth_date"/>
-                            <field name="contact_person"/>
-                            <field name="age"/>
+                            <group>
+                                <field name="first_name" string="First name"/>
+                                <field name="last_name"/>
+                                <field name="personal_doctor_id"/>
+                                
+                                <field name="gender" widget="radio"/>
+                            </group>
+                            <group>
+                                <field name="photo" string="" widget="image" class="oe_avatar m-0" options='{"zoom": true, "preview_image": "avatar256"}'/>
+                            </group>
+
+                            <notebook>
+                                <page name="personal_patient_info" string="Personal info">
+                                    <group>
+                                        <field name="passport_info" string="Passport"/>
+                                        <field name="birth_date"/>
+                                        <field name="age"/>
+                                    </group>
+                                </page>
+                                <page name="contact_patient_info" string="Contact info">
+                                    <group>
+                                        <field name="phone"/>
+                                        <field name="contact_person"/>
+                                    </group>
+                                </page>
+                                <page name="patient_diagnosis_history" string="Diagnosis History">
+                                    <field name="diagnosis_ids">
+                                        <tree>
+                                            <field name="disease_id"/>
+                                            <field name="visit_id"/>
+                                            <field name="approved"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
                         </group>
                     </group>
-                </group>
+                </sheet>    
             </form>
         </field>
     </record>
 
+    <record id="view_patient_search" model="ir.ui.view">
+        <field name="name">patient.search</field>
+        <field name="model">hr_hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="phone" string="Phone" operator="ilike"/>
+                <filter name="doctor" string="Doctor" domain="[('personal_doctor_id', '!=', False)]"/>
+            </search>
+        </field>
+    </record>
 
 
 </odoo>

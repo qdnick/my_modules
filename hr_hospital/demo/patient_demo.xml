@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="patient1" model="hr_hospital.patient">
+        <field name="first_name">Vasyl</field>
+        <field name="last_name">Timov</field>
+        <field name="phone">+380999999999</field>
+        <field name="gender">male</field>
+        <field name="passport_info">mo662345</field>
+        <field name="contact_person">Timova A</field>
+        <field name="birth_date">1984-03-07</field>
+        <field name="personal_doctor_id" ref="doctor2"/>
+    </record>
+
+    <record id="patient2" model="hr_hospital.patient">
+        <field name="first_name">Taras</field>
+        <field name="last_name">Mokhtiy</field>
+        <field name="phone">+380979665999</field>
+        <field name="gender">male</field>
+        <field name="passport_info">mo432344</field>
+        <field name="contact_person">Valda I</field>
+        <field name="birth_date">1994-01-05</field>
+        <field name="personal_doctor_id" ref="doctor3"/>
+    </record>
+
+    <record id="patient3" model="hr_hospital.patient">
+        <field name="first_name">Mykola</field>
+        <field name="last_name">Balak</field>
+        <field name="phone">+380509111999</field>
+        <field name="gender">male</field>
+        <field name="passport_info">mo222345</field>
+        <field name="contact_person">Nastov V</field>
+        <field name="birth_date">1987-09-09</field>
+        <field name="personal_doctor_id" ref="doctor1"/>
+    </record>
+
+    <record id="patient4" model="hr_hospital.patient">
+        <field name="first_name">Vasyl</field>
+        <field name="last_name">Vaida</field>
+        <field name="phone">+380966644499</field>
+        <field name="gender">male</field>
+        <field name="passport_info">mo11233</field>
+        <field name="contact_person">Vaida I</field>
+        <field name="birth_date">2004-07-11</field>
+        <!-- <field name="personal_doctor_id" ref="doctor1"/> -->
+    </record>
+
+    <record id="patient5" model="hr_hospital.patient">
+        <field name="first_name">Inna</field>
+        <field name="last_name">Vaida</field>
+        <field name="phone">+380966641199</field>
+        <field name="gender">female</field>
+        <field name="passport_info">mo14433</field>
+        <field name="contact_person">Vaida V</field>
+        <field name="birth_date">2001-11-11</field>
+        <!-- <field name="personal_doctor_id" ref="doctor1"/> -->
+    </record>
+
+</odoo>
