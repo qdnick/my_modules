@@ -2,6 +2,13 @@
 
 <odoo>
 
+    <record id="action_hr_hospital_specialties" model="ir.actions.act_window">
+        <field name="name">Specialties</field>
+        <field name="res_model">hr_hospital.specialty</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
     <record id="view_specialty_tree" model="ir.ui.view">
         <field name="name">specialty.tree</field>
         <field name="model">hr_hospital.specialty</field>

@@ -2,11 +2,18 @@
 
 <odoo>
 
+    <record id="action_hr_hospital_diagnoses" model="ir.actions.act_window">
+        <field name="name">Diagnoses</field>
+        <field name="res_model">hr_hospital.diagnosis</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="context">{}</field>
+    </record>
+
     <record id="view_diagnosis_tree" model="ir.ui.view">
         <field name="name">diagnosis.tree</field>
         <field name="model">hr_hospital.diagnosis</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="visit_id"/>
                 <field name="disease_id" string="Disease"/>
                 <field name="approved"/>
@@ -28,6 +35,28 @@
                 <field name="description" string="Description"/>
 
             </form>
+        </field>
+    </record>
+
+    <record id="view_diagnosis_pivot" model="ir.ui.view">
+        <field name="name">diagnosis.pivot</field>
+        <field name="model">hr_hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <pivot string="Diagnoses Analysis">
+                <field name="disease_id" type="row"/>
+                <field name="visit_actual_date" interval="month" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_diagnosis_graph" model="ir.ui.view">
+        <field name="name">diagnosis.graph</field>
+        <field name="model">hr_hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <graph string="Disease Trends" type="bar">
+                <field name="disease_id" type="row" string="Disease"/>
+                <field name="visit_actual_date" interval="month" type="col"/>
+            </graph>
         </field>
     </record>
 
