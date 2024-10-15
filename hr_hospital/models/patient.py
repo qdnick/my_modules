@@ -39,6 +39,24 @@ class Patient(models.Model):
         string="Diagnosis History",
     )
 
+    # debug
+    def patient_debug_report(self):
+        return "1_1_patient"
+
+    def get_last_visit_status(self, doctor_id):
+        # find last visit status
+        last_visit = self.env["hr_hospital.visit"].search(
+            [("patient_id", "=", self.id), ("doctor_id", "=", doctor_id)],
+            order="actual_date desc",
+            limit=1,
+        )
+
+        if last_visit:
+            return last_visit.status
+        return False
+
+    # ---
+
     @api.depends("visit_ids")
     def _compute_diagnosis_ids(self):
         for patient in self:

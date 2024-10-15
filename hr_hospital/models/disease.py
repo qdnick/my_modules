@@ -58,7 +58,10 @@ class Disease(models.Model):
     def _compute_complete_name(self):
         for dis in self:
             if dis.parent_id:
-                dis.complete_name = "%s / %s" % (dis.parent_id.complete_name, dis.name)
+                dis.complete_name = "%s / %s" % (
+                    dis.parent_id.complete_name,
+                    dis.name,
+                )
             else:
                 dis.complete_name = dis.name
 

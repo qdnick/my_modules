@@ -48,6 +48,7 @@
                     <field name="first_name" string="First name"/>
                     <field name="last_name" string="Last name"/>
                     <field name="specialty_id" string="Specialty"/>
+                    <field name="company_id" string="Company"/>
                     <field name="is_intern"/>
                     <field name="mentor_id" string="Doctor-mentor" invisible="is_intern == False"/>
                     <field name="phone"/>
@@ -109,14 +110,24 @@
         <field name="binding_type">report</field>
     </record>
 
+<!-- work -->
     <record id="view_doctor_kanban" model="ir.ui.view">
         <field name="name">doctor.kanban</field>
         <field name="model">hr_hospital.doctor</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="specialty_id">
+            <!-- <kanban default_group_by="specialty_id"> -->
+            <kanban class="o_kanban_example" default_group_by="specialty_id">
                 <field name="display_name"/>
                 <field name="specialty_id"/>
+                <!-- <field name="is_intern"/> -->
+                <field name="intern_ids"/>
                 <templates>
+                    <t t-name="kanban-menu">
+                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                    </t>
+<!-- add menu -->
                     <t t-name="kanban-box">
                         <div style="position: relative" class="oe_kanban_global_click">
                             <div>
@@ -128,9 +139,27 @@
                                         </span>
                                     </div>
                                 </div>
-                                <a type="object" name="action_create_visit"
-                                class="btn btn-primary mt8"
-                                string="Quick visit">Quick visit</a>
+                                <br/>
+                                <strong>Interns:</strong>
+                                <div class="o_kanban_record_bottom">
+                                    <field name="intern_ids" widget="many2many_tags"/>
+                                </div>
+                                <div class="oe_kanban_footer">
+                                    <div class="oe_kanban_bottom">
+                                        <a type="object"
+                                            name="action_create_visit"
+                                            class="btn btn-primary mt8"
+                                            string="Quick visit">Quick visit</a>
+                                        <a type="edit"
+                                            name="edit_doctor"
+                                            class="btn btn-primary mt8"
+                                            string="Quick visit">Edit</a>
+                                        <a type="delete"
+                                            name="delete_foctor"
+                                            class="btn btn-primary mt8"
+                                            string="Quick visit">Delete</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </t>
@@ -139,5 +168,4 @@
         </field>
     </record>
 
-    
 </odoo>
