@@ -3,7 +3,12 @@ Module doctor for hr_hospital
 
 """
 
+import logging
+
 from odoo import models, fields, api
+
+
+_logger = logging.getLogger(__name__)
 
 
 class Doctor(models.Model):
@@ -35,8 +40,33 @@ class Doctor(models.Model):
         string="Interns",
     )
 
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        required=True,
+        readonly=False,
+        default=lambda self: self.env.company,
+    )
+
+    visit_ids = fields.One2many(
+        "hr_hospital.visit",
+        "doctor_id",
+        string="Visits",
+    )
+
+    # debug
+    def doctor_debug_report(self):
+        return "1_1_doctor"
+
+    # ---
+    # add file link for report
+    def _get_report_base_filename(self):
+        self.ensure_one()
+        return "Hr hospital - %s" % (self.display_name)
+
     def action_create_visit(self):
         # fast creat visit
+        _logger.info(self.id)
+
         return {
             "type": "ir.actions.act_window",
             "name": "Create Visit",

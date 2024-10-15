@@ -71,6 +71,12 @@ class Visit(models.Model):
         string="Diagnoses",
     )
 
+    # debug
+    def visit_debug_report(self):
+        return "1_1_visit"
+
+    # ---
+
     # completed visit
     @api.constrains("status", "scheduled_date", "doctor_id")
     def _check_completed_visit(self):

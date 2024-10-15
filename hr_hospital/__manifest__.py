@@ -5,7 +5,7 @@
     "author": "qdnick",
     "category": "Customizations",
     "license": "OPL-1",
-    "version": "17.0.3.1.0",
+    "version": "17.0.4.1.0",
     "depends": [
         "base",
         "mail",
@@ -24,6 +24,7 @@
         "views/disease_views.xml",
         "views/diagnosis_views.xml",
         "views/hospital_main_menu_views.xml",
+        "reports/doctor_report.xml",
     ],
     "demo": [
         "demo/disease_demo.xml",
