@@ -5,7 +5,7 @@
     "author": "qdnick",
     "category": "Customizations",
     "license": "OPL-1",
-    "version": "17.0.4.1.0",
+    "version": "17.0.4.2.0",
     "depends": [
         "base",
         "mail",
