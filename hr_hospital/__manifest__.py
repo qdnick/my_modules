@@ -14,6 +14,7 @@
         "python": [],
     },
     "data": [
+        "security/hr_hospital_security.xml",
         "security/ir.model.access.csv",
         "wizard/disease_report_wizard_views.xml",
         "wizard/mass_update_doctor_wizard_views.xml",
@@ -25,9 +26,9 @@
         "views/diagnosis_views.xml",
         "views/hospital_main_menu_views.xml",
         "reports/doctor_report.xml",
+        "data/disease_data.xml",
     ],
     "demo": [
-        "demo/disease_demo.xml",
         "demo/specialty_demo.xml",
         "demo/doctor_demo.xml",
         "demo/patient_demo.xml",

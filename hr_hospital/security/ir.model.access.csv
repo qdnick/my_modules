@@ -8,3 +8,8 @@ access_diagnosis_user,access_diagnosis_user,model_hr_hospital_diagnosis,base.gro
 access_specialty_user,access_specialty_user,model_hr_hospital_specialty,base.group_user,1,1,1,1
 access_mass_update_doctor_wizard_user,access_mass_update_doctor_wizard_user,model_mass_update_doctor_wizard,base.group_user,1,1,1,1
 access_disease_report_wizard_user,access_disease_report_wizard_user,model_disease_report_wizard,base.group_user,1,1,1,1
+access_patient_visit,access_patient_visit,model_hr_hospital_visit,hr_hospital.group_patient,1,0,0,0
+access_intern_visit,access_intern_visit,model_hr_hospital_visit,hr_hospital.group_intern,1,1,0,0
+access_doctor_visit,access_doctor_visit,model_hr_hospital_visit,hr_hospital.group_doctor,1,1,0,0
+access_manager_visit,access_manager_visit,model_hr_hospital_visit,hr_hospital.group_manager,1,0,0,0
+access_admin_visit,access_admin_visit,model_hr_hospital_visit,hr_hospital.group_admin,1,1,1,1
