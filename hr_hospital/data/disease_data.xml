@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<odoo>
-    <!-- Перший рівень хвороб -->
+<odoo noupdate="1">
+    
     <record id="disease1" model="hr_hospital.disease">
         <field name="name">Infectious Diseases</field>
     </record>
@@ -14,7 +14,6 @@
         <field name="name">Respiratory Diseases</field>
     </record>
 
-    <!-- Другий рівень хвороб -->
     <record id="disease4" model="hr_hospital.disease">
         <field name="name">Flu</field>
         <field name="parent_id" ref="disease1"/>
@@ -45,7 +44,6 @@
         <field name="parent_id" ref="disease3"/>
     </record>
 
-    <!-- Третій рівень хвороб -->
     <record id="disease10" model="hr_hospital.disease">
         <field name="name">H1N1 Flu</field>
         <field name="parent_id" ref="disease4"/>
@@ -86,7 +84,6 @@
         <field name="parent_id" ref="disease9"/>
     </record>
 
-    <!-- Додаткові хвороби без ієрархії -->
     <record id="disease18" model="hr_hospital.disease">
         <field name="name">Pneumonia</field>
     </record>
@@ -98,5 +95,5 @@
     <record id="disease20" model="hr_hospital.disease">
         <field name="name">Measles</field>
     </record>
-
+    
 </odoo>

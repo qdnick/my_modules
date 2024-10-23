@@ -8,7 +8,16 @@ from odoo import models, fields, api
 
 class Patient(models.Model):
     """
-    Model Patient.
+    Represents a patient in the hospital system.
+
+    This class stores all the necessary information related to a patient,
+    including personal details, medical history, and visits.
+
+    Attributes:
+        name (str): Full name of the patient.
+        birth_date (date): Date of birth of the patient.
+        doctor_id (Many2one): Refers to the doctor assigned to the patient.
+        visit_ids (One2many): History of patient visits.
     """
 
     _name = "hr_hospital.patient"

@@ -13,7 +13,18 @@ _logger = logging.getLogger(__name__)
 
 class Doctor(models.Model):
     """
-    Model Doctor.
+    Represents a doctor in the hospital system.
+
+    This class contains the necessary fields
+    and methods to manage doctor-related
+    data, such as their specialty, patients,
+    and mentorship details.
+
+    Attributes:
+        name (str): Full name of the doctor.
+        specialty_id (Many2one): Reference to the doctor's specialty.
+        intern_ids (One2many): List of interns mentored by the doctor.
+        patient_ids (One2many): List of patients assigned to the doctor.
     """
 
     _name = "hr_hospital.doctor"

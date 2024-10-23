@@ -20,6 +20,13 @@ class Person(models.AbstractModel):
     photo = fields.Image()
     gender = fields.Selection([("male", "Male"), ("female", "Female")])
 
+    # add user id
+    user_id = fields.Many2one(
+        "res.users",
+        string="User",
+        help="The user related to this patient.",
+    )
+
     @api.depends("last_name", "first_name")
     def _compute_display_name(self):
         for rec in self:
