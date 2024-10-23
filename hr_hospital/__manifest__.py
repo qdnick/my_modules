@@ -1,11 +1,11 @@
 # Manifest modules hr_hospital
 {
-    "name": "HR Hospital",
+    "name": "HR Hospital hnn",
     "summary": "",
     "author": "qdnick",
     "category": "Customizations",
-    "license": "OPL-1",
-    "version": "17.0.4.2.0",
+    "license": "LGPL-3",
+    "version": "17.0.5.0.0",
     "depends": [
         "base",
         "mail",
@@ -14,7 +14,8 @@
         "python": [],
     },
     "data": [
-        "security/hr_hospital_security.xml",
+        "security/hr_hospital_group.xml",
+        "security/hr_hospital_role.xml",
         "security/ir.model.access.csv",
         "wizard/disease_report_wizard_views.xml",
         "wizard/mass_update_doctor_wizard_views.xml",

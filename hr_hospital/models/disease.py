@@ -1,6 +1,5 @@
 """
 Module disease for hr_hospital
-lesson4
 
 """
 
@@ -10,7 +9,20 @@ from odoo.exceptions import ValidationError
 
 class Disease(models.Model):
     """
-    Model Disease.
+    Represents a disease in the hospital system.
+
+    This class defines the structure for storing
+    information about diseases.
+    It also includes a hierarchy of diseases
+    for more organized classification.
+
+    Attributes:
+        name (str):
+            Name of the disease.
+        parent_id (Many2one):
+            Parent disease to create a hierarchy.
+        child_ids (One2many):
+            List of sub-diseases (children) under this disease.
     """
 
     _name = "hr_hospital.disease"

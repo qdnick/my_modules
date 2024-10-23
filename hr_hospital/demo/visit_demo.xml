@@ -32,7 +32,7 @@
         <field name="actual_date">2024-09-15</field>
         <!-- <field name="status">cancelled</field> -->
     </record>
-<!-- грллр -->
+
     <record id="visit5" model="hr_hospital.visit">
         <field name="patient_id" ref="patient3"/>
         <field name="doctor_id" ref="doctor2"/>

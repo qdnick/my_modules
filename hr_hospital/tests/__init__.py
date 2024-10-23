@@ -1,1 +1,1 @@
-# from . import test_hr_hospital
+from . import test_hr_hospital
